@@ -16,35 +16,38 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  
   // if node exists 
   //   set node to equal node
   // else node equals this
-  // if this value equals target
+  // if node value equals target
   //   return true
-  // else if current node has children
+  // else if node current property has children
   //   for each child
   //     return contains on each child
   // else return false
+  
+  /*
   node = node || this;
-  if ( this.value === target ) {
+  if ( node.value === target ) {
     return true;
-  } else if ( node.children ) {
-    _.each(node.children, function(child) {
-      return this.contains(target, child);
+  } else if ( node.children.length > 0 ) {
+    return _.some(node.children, function(child) {
+      return node.contains(target, child);
     });
   } else {
     return false;
   }
-  /*
+ */
+  // --- REFACTORED ------
   return this.value === target || this.children.some(function(child) {
     return child.contains(target);
   });
-  */
+ 
 };
-
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ addChild: O(1)
+ contains: O(n)
  */
