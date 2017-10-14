@@ -54,10 +54,13 @@ var LinkedList = function() {
 
 
 var Node = function(value) {
-  var node = {};
+  var node = Object.create(bstMethods);
 
   node.value = value;
   node.next = null;
+  node.left = null;
+  node.right = null;
+  
 
   return node;
 };
