@@ -95,6 +95,8 @@ bstMethods.depthFirstLog = function (fn, node) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
- 
+  depthFirstLog: O(log n);
+  contains: O(log n)
+  insert: O(log n)
  
  */
