@@ -4,6 +4,14 @@ describe('linkedList', function() {
   beforeEach(function() {
     linkedList = LinkedList();
   });
+  
+  // Add test
+  it ('should instantiate a linkedList pointers with null values', function () {
+    expect(linkedList.head).to.equal(null);
+    expect(linkedList.tail).to.equal(null);
+  });
+  
+  
 
   it('should have a head and tail', function() {
     expect(linkedList).to.have.property('head');

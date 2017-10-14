@@ -23,5 +23,15 @@ describe('set', function() {
     set.remove('Mel Gibson');
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
+  
+  // Add
+  
+  it ('should not contain duplicate values', function () {
+    set.add('Mel Tormé');
+    set.add('Mel Tormé');
+    expect(set.contains('Mel Tormé')).to.equal(true);
+    set.remove('Mel Tormé');
+    expect(set.contains('Mel Tormé')).to.equal(false);
+  });
 
 });

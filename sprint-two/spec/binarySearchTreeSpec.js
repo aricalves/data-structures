@@ -37,4 +37,16 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  // add test  
+  it('should create nodes with only two children', function() {
+    binarySearchTree.insert(0);
+    binarySearchTree.insert(9);
+    var left = binarySearchTree.left;
+    var right = binarySearchTree.right;
+    expect(left.hasOwnProperty('left')).to.equal(true);
+    expect(right.hasOwnProperty('right')).to.equal(true);
+  });
+  
+  
 });

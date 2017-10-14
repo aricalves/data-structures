@@ -17,11 +17,11 @@ HashTable.prototype.insert = function(k, v) {
     this._storage.set(index, _bucket);
   }
 
-  // thank you, Tim Mansfield
+  // thank you, Fred
   bucket = bucket || _bucket;
 
   // walk through the bucket
-  for (var i = 0; i < bucket.length; i++) {
+  for (var i = 0; i < bucket.length; i++) { 
     var tuple = bucket[i];
 
     // checks if the given key is present in bucket

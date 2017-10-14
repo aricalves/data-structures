@@ -40,5 +40,13 @@ describe('tree', function() {
     expect(tree.contains(7)).to.equal(true);
     expect(tree.contains(8)).to.equal(true);
   });
+  
+  it('should not limit the amount of children a tree can contain', function() {
+    for (var i = 0; i < 100; i++) {
+      tree.addChild(i);
+    }
+    expect(tree.contains(99)).to.equal(true);
+      
+  });
 
 });

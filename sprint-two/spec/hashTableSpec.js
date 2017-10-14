@@ -46,6 +46,16 @@ describe('hashTable', function() {
     expect(hashTable.retrieve(v2)).to.equal(v2);
     window.getIndexBelowMaxForKey = oldHashFunction;
   });
+  
+  // Add tests
+  
+
+  it('should create a hash table with length equal to _limit', function() {
+    expect(hashTable.length).to.equal(this._limit);
+  });
+  
+  
+  
 
   // (Advanced! Remove the extra "x" when you want the following tests to run)
   xit ('should double in size when needed', function() {
