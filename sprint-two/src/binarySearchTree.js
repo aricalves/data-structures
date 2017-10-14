@@ -68,7 +68,26 @@ bstMethods.contains = function (target, node) {
   
 };
 
-bstMethods.depthFirstLog = function () {
+bstMethods.depthFirstLog = function (fn, node) {  
+  // does left exist (not null)
+  //    yes: call depth first log on left node 
+  //    no: ignore it
+  // does right exist (not null)
+  //   yes : call depth first log on ride node,
+  //   no :  ignore it
+  // call cb function on node.value
+  
+  node = node || this;
+    
+  fn(node.value);
+  
+  if ( node.left ) {
+    
+    node.left.depthFirstLog(fn, node.left);
+  }
+  if ( node.right ) {
+    node.right.depthFirstLog(fn, node.right);
+  }
   
 };
   
@@ -77,15 +96,5 @@ bstMethods.depthFirstLog = function () {
 /*
  * Complexity: What is the time complexity of the above functions?
  
- var Node = function(value) {
-  var node = {};
-
-  node.value = value;
-  node.next = null;
-  node.left = null;
-  node.right = null;
-
-  return node;
-};
  
  */
