@@ -15,14 +15,17 @@ var LimitedArray = function(limit) {
   var storage = [];
 
   var limitedArray = {};
+  
   limitedArray.get = function(index) {
     checkLimit(index);
     return storage[index];
   };
+  
   limitedArray.set = function(index, value) {
     checkLimit(index);
     storage[index] = value;
   };
+  
   limitedArray.each = function(callback) {
     for (var i = 0; i < storage.length; i++) {
       callback(storage[i], i, storage);
@@ -51,6 +54,7 @@ var getIndexBelowMaxForKey = function(str, max) {
     hash = hash & hash; // Convert to 32bit integer
     hash = Math.abs(hash);
   }
+  
   return hash % max;
 };
 
